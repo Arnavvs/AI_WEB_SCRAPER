@@ -1,0 +1,11 @@
+ai_module.py 🧠
+This file is the brain of the operation. It's responsible for all communication with the Google Gemini model. It takes the raw HTML from a webpage, sends it to the AI, and gets back a structured command, like CLICK a button or EXTRACT data.
+
+browser_engine.py 🤖
+This file acts as the hands of the agent. It uses the Playwright library to launch and control a web browser. It executes the commands given by the AI module—navigating to pages, clicking elements, and typing in forms. Its main job is to interact with the website directly.
+
+data_handler.py 💾
+This is the filing cabinet. Once data has been scraped, this module uses the Pandas library to organize that data and save it to a local CSV file.
+
+main.py 🚀
+This is the orchestrator or manager. It runs the main loop that connects all the other modules. It initializes the browser_engine, gets instructions from the ai_module, tells the browser_engine to perform the actions, and finally uses the data_handler to save the results. It controls the overall workflow from start to finish.
